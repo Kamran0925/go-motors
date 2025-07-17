@@ -4,12 +4,27 @@ import Link from "next/link";
 import { footerLinks } from "@constants";
 
 const Footer = () => (
-  <footer className='flex flex-col text-black-100  mt-5 border-t border-gray-100'>
-    <div className='flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10'>
-      <div className='flex flex-col justify-start items-start gap-6'>
-        <Image src='/logo.svg' alt='logo' width={118} height={18} className='object-contain' />
-        <p className='text-base text-gray-700'>
-          Carhub 2023 <br />
+  <footer className="flex flex-col text-black-100  mt-5 border-t border-gray-100">
+    <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10">
+      <div className="flex flex-col justify-start items-start gap-6">
+        <Link
+          href="/"
+          className="flex items-center gap-3 hover:opacity-90 transition-opacity"
+        >
+          <Image
+            src="/logo.png"
+            alt="Go Motors Logo"
+            width={50}
+            height={50}
+            className="object-contain"
+          />
+          <h4 className="text-2xl font-semibold tracking-tight text-primary-blue">
+            Go Motors
+          </h4>
+        </Link>
+
+        <p className="text-base text-gray-700">
+          Go Motors 2025 <br />
           All Rights Reserved &copy;
         </p>
       </div>
@@ -34,8 +49,8 @@ const Footer = () => (
       </div>
     </div>
 
-    <div className='flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10'>
-      <p>@2023 CarHub. All rights reserved</p>
+    <div className="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
+      <p>@2025 Go Motors. All rights reserved</p>
 
       <div className="footer__copyrights-link">
         <Link href="/" className="text-gray-500">
