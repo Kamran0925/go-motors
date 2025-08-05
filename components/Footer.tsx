@@ -59,6 +59,15 @@ const Footer = () => (
         <Link href="/" className="text-gray-500">
           Terms & Condition
         </Link>
+        <Link href="/" className="text-gray-500">
+          About Us
+        </Link>
+        <Link href="/" className="text-gray-500">
+          Contact
+        </Link>
+        <Link href="/" className="text-gray-500">
+          FAQ
+        </Link>
       </div>
     </div>
   </footer>
