@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { CustomButton } from "@components";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const handleScroll = () => {
@@ -12,14 +13,24 @@ const Hero = () => {
   return (
     <div className="hero">
       <div className="flex-1 pt-36 padding-x">
-        <h1 className="hero__title">
+        <motion.h1
+          className="hero__title"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+        >
           Drive Your Dream Car Today — Fast, Easy & Hassle-Free
-        </h1>
+        </motion.h1>
 
-        <p className="hero__subtitle">
+        <motion.p
+          className="hero__subtitle"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+        >
           Browse, book, and hit the road in minutes. Your perfect ride is just a
           few clicks away.
-        </p>
+        </motion.p>
 
         <CustomButton
           title="Explore Cars"
@@ -29,9 +40,18 @@ const Hero = () => {
       </div>
 
       <div className="hero__image-container">
-        <div className="hero__image">
+        <motion.div
+          className="hero__image"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 1.2,
+            ease: "easeOut",
+          }}
+        >
           <Image src="/hero.png" alt="hero" fill className="object-contain" />
-        </div>
+        </motion.div>
+
         <div className="hero__image-overlay" />
       </div>
     </div>
