@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { calculateCarRent, generateCarImageUrl } from "@utils";
 import { CarProps } from "@types";
@@ -14,20 +15,33 @@ interface CarCardProps {
 
 const CarCard = ({ car }: CarCardProps) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
-
   const [isOpen, setIsOpen] = useState(false);
-
   const carRent = calculateCarRent(city_mpg, year);
 
   return (
-    <div className="car-card group">
-      <div className="car-card__content">
+    <motion.div
+      className="car-card group"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <motion.div
+        className="car-card__content"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+      >
         <h2 className="car-card__content-title">
           {make} {model}
         </h2>
-      </div>
+      </motion.div>
 
-      <p className="flex mt-6 text-[32px] leading-[38px] font-extrabold">
+      <motion.p
+        className="flex mt-6 text-[32px] leading-[38px] font-extrabold"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+      >
         <span className="self-start text-[14px] leading-[17px] font-semibold">
           $
         </span>
@@ -35,9 +49,14 @@ const CarCard = ({ car }: CarCardProps) => {
         <span className="self-end text-[14px] leading-[17px] font-medium">
           /day
         </span>
-      </p>
+      </motion.p>
 
-      <div className="relative w-full h-40 my-3 object-contain">
+      <motion.div
+        className="relative w-full h-40 my-3 object-contain"
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+      >
         <Image
           src={generateCarImageUrl(car)}
           alt="car model"
@@ -45,9 +64,14 @@ const CarCard = ({ car }: CarCardProps) => {
           priority
           className="object-contain"
         />
-      </div>
+      </motion.div>
 
-      <div className="relative flex w-full mt-2">
+      <motion.div
+        className="relative flex w-full mt-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
         <div className="flex group-hover:invisible w-full justify-between text-grey">
           <div className="flex flex-col justify-center items-center gap-2">
             <Image
@@ -77,14 +101,14 @@ const CarCard = ({ car }: CarCardProps) => {
             handleClick={() => setIsOpen(true)}
           />
         </div>
-      </div>
+      </motion.div>
 
       <CarDetails
         isOpen={isOpen}
         closeModal={() => setIsOpen(false)}
         car={car}
       />
-    </div>
+    </motion.div>
   );
 };
 
