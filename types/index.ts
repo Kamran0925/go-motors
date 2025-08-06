@@ -1,14 +1,14 @@
 import { MouseEventHandler } from "react";
 
 export interface CarProps {
-  city_mpg: number;
+  city_mpg: any;
   class: string;
-  combination_mpg: number;
+  combination_mpg: any;
   cylinders: number;
   displacement: number;
   drive: string;
   fuel_type: string;
-  highway_mpg: number;
+  highway_mpg: any;
   make: string;
   model: string;
   transmission: string;
