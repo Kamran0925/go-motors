@@ -23,9 +23,9 @@ const Footer = () => (
           </h4>
         </Link>
 
-        <p className="text-base text-gray-700">
-          Go Motors 2025 <br />
-          All Rights Reserved &copy;
+        <p className="max-w-xs text-base text-gray-700">
+          A trusted car rental platform for affordable, self-drive, and
+          chauffeur-driven rides across major cities.
         </p>
       </div>
 
@@ -58,6 +58,15 @@ const Footer = () => (
         </Link>
         <Link href="/" className="text-gray-500">
           Terms & Condition
+        </Link>
+        <Link href="/" className="text-gray-500">
+          About Us
+        </Link>
+        <Link href="/" className="text-gray-500">
+          Contact
+        </Link>
+        <Link href="/" className="text-gray-500">
+          FAQ
         </Link>
       </div>
     </div>
